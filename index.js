@@ -42,9 +42,43 @@ class Airplane {
 */
 
 class Person {
-  
+  constructor(name, age){
+    this.name = name;
+    this.age = age;
+    this.stomach = [];
+  }
+  eat(food){
+    if (this.stomach.length < 10){
+    return this.stomach.push(food)
+}else{}
 }
+  poop(){
+    return this.stomach = []
+  }
+  toString(){
+    return `${this.name}, ${this.age}`
+  }
+}
+// const matt = new Person("Matt", 22)
+// matt.eat('Taco')
+// matt.eat('Taco')
+// matt.eat('Taco')
+// matt.eat('Taco')
+// matt.eat('Taco')
+// matt.eat('Taco')
+// matt.eat('Taco')
+// matt.eat('Taco')
+// matt.eat('Taco')
+// matt.eat('Taco')
+// matt.eat('Taco')
+// matt.eat('Taco')
+// matt.eat('Taco')
 
+// matt.eat('Taco')
+
+// console.log(matt)
+// matt.poop()
+// console.log(matt)
 /*
   TASK 2
     - Write a Car class whose constructor initializes `model` and `milesPerGallon` from arguments.
@@ -60,8 +94,66 @@ class Person {
 */
 
 class Car {
-  
+  constructor(model, milesPerGallon){
+    this.model = model;
+    this.milesPerGallon = milesPerGallon;
+    this.tank = 0;
+    this.odometer = 0;
+    this.tankLimit = 20;
+  }
+  fill(gallons){
+    if (gallons + this.tank <= this.tankLimit){
+      return this.tank =  this.tank + gallons;
+    }
+  }
+  drive(distance) {
+    if (distance >= this.milesPerGallon * this.tank){
+      return `I ran out of fuel at ${this.odometer} miles!`
+    }else if (distance >= (this.milesPerGallon * this.tank) - this.milesPerGallon){
+      return this.tank -1, this.odometer = this.odometer + distance
+    }else if (distance >= (this.milesPerGallon * this.tank) - (this.milesPerGallon * 2)){
+      return this.tank -2, this.odometer = this.odometer + distance
+    }else if (distance >= (this.milesPerGallon * this.tank) - (this.milesPerGallon * 3)){
+      return this.tank -3, this.odometer = this.odometer + distance
+    }else if (distance >= (this.milesPerGallon * this.tank) - (this.milesPerGallon * 4)){
+      return this.tank -4, this.odometer = this.odometer + distance
+    }else if (distance >= (this.milesPerGallon * this.tank) - (this.milesPerGallon * 5)){
+      return this.tank -5, this.odometer = this.odometer + distance
+    }else if (distance >= (this.milesPerGallon * this.tank) - (this.milesPerGallon * 6)){
+      return this.tank -6, this.odometer = this.odometer + distance
+    }else if (distance >= (this.milesPerGallon * this.tank) - (this.milesPerGallon * 7)){
+      return this.tank -7, this.odometer = this.odometer + distance
+    }else if (distance >= (this.milesPerGallon * this.tank) - (this.milesPerGallon * 8)){
+      return this.tank -8, this.odometer = this.odometer + distance
+    }else{
+      return this.tank -9, this.odometer = this.odometer + distance
 }
+}
+    // if (distance >= this.milesPerGallon * this.tank){
+    //   return `I ran out of fuel at ${this.odometer} miles!`
+    // }else if (distance >= (this.milesPerGallon * this.tank) - this.milesPerGallon){
+    //   return this.tank -1
+    // }else if (distance >= (this.milesPerGallon * this.tank) - (this.milesPerGallon * 2)){
+    //   return this.tank -2
+    // }else if (distance >= (this.milesPerGallon * this.tank) - (this.milesPerGallon * 3)){
+    //   return this.tank -3
+    // }else if (distance >= (this.milesPerGallon * this.tank) - (this.milesPerGallon * 4)){
+    //   return this.tank -4
+    // }else if (distance >= (this.milesPerGallon * this.tank) - (this.milesPerGallon * 5)){
+    //   return this.tank -5
+    // }else if (distance >= (this.milesPerGallon * this.tank) - (this.milesPerGallon * 6)){
+    //   return this.tank -6
+    // }else if (distance >= (this.milesPerGallon * this.tank) - (this.milesPerGallon * 7)){
+    //   return this.tank -7
+    // }else if (distance >= (this.milesPerGallon * this.tank) - (this.milesPerGallon * 8)){
+    //   return this.tank -8
+    // }else if (distance >= (this.milesPerGallon * this.tank) - (this.milesPerGallon * 9)){
+    //   return this.tank -9
+    // }else if (distance >= (this.milesPerGallon * this.tank) - (this.milesPerGallon * 10)){
+    //   return this.tank -10
+    // }
+//     return this.odometer = this.odometer + distance
+// }
 
 /*
   TASK 3
@@ -75,6 +167,7 @@ class Car {
         + Speaking should return a phrase `Hello my name is {name}, I am from {location}`.
         + {name} and {location} of course come from the instance's own properties.
 */
+}
 class Lambdasian {
   
 }
