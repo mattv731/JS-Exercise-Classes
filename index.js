@@ -104,17 +104,20 @@ class Car {
   fill(gallons){
     if (gallons + this.tank <= this.tankLimit){
       return this.tank =  this.tank + gallons;
+    }else{
+      return `The tank limit is ${this.tankLimit}.`
     }
   }
   drive(distance) {
-    for (let i = 0; i < this.tank; i++){
-      if (distance >= this.tank * this.milesPerGallon){
-        this.tank = 0
-        return `I ran out of gas at ${this.odometer + (this.tank * this.milesPerGallon)}`
-      }else{
-        this.tank =  (distance / this.milesPerGallon) - this.tank
-      }
-    // return this.tank -9, this.odometer = this.odometer + distance
+    if (distance > this.milesPerGallon * this.tank){
+      this.odometer = (this.tank * this.milesPerGallon) + this.odometer;
+      this.tank = 0;
+      return `I ran out of fuel at ${this.odometer} miles!`
+    }else{
+      this.tank = this.tank - (distance / this.milesPerGallon);
+      this.odometer = this.odometer + distance;
+      return this.tank , this.odometer
+    }
 }
 }
     // if (distance >= this.milesPerGallon * this.tank){
@@ -155,7 +158,7 @@ class Car {
         + Speaking should return a phrase `Hello my name is {name}, I am from {location}`.
         + {name} and {location} of course come from the instance's own properties.
 */
-}
+
 class Lambdasian {
   constructor(object){
     this.name = object.name;
